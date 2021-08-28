@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <title>Index</title>
+{% endblock %}
+{% block headline %}
+<h1>Index</h1>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+    <h2>Welcome  {{ user.username }} </h2>
+    <h1>This is the index page</h1>
+{% else %}
+    <h2>You are not logged in</h2>
+{% endif %}
+{% endblock %}
+
