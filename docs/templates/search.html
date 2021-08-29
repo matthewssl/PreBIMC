@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<title>BIMC Documents</title>
+{% endblock %}
+
+{% block content %}
+<form method="GET" xmlns:padding-right="http://www.w3.org/1999/xhtml">
+    Search: <input type="text" name="search">
+    <input type="submit" value="Submit" />
+</form>
+
+{% if docs %}
+<p><strong>Documents Found: {{ docs.count }} </strong></p>
+{% else %}
+<p><strong>No Documents Found</strong></p>
+{% endif %}
+<table>
+{% for doc in docs %}
+    <tr><td><a href="../{{doc.id}}/editQ/">Edit</a></td>
+        <td style="align:right; padding-right:21px;">{{doc.doc_date}} </td>
+        <td> <a href="{{docloc}}{{ doc.file_name }}" target="_blank">{{ doc.title }} </a></td>
+    <td>{{ doc.doc_type }}</td><td>{{ doc.description }}</td>
+    </tr>
+
+{% endfor %}
+    </table>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+<title>
+    Show PDF
+</title>
+{% endblock %}
+
+{% block content %}
+
+<h2>Test DocInfo Create Form</h2>
+<div style="float:left; width:50%">
+    {{ err }}
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+
+</div>
+<div style="float:right; width:50%; height: 600px;">
+    <button id="prev"  onclick="location.href='?next={{ prevdoc }}'" > < Prev </button>
+    <button id="next"  onclick="location.href='?next={{ nextdoc }}'" > Next > </button>
+    <br> <span> file = {{ pdf }}</span>
+    <span>{{ msg }}</span>
+    <object data={{ pdf }} type="application/pdf" width="100%" height="100%">
+<p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it:
+<a href="{{ pdf }}">Download PDF</a>.</p>
+</object>
+
+</div>
+{% endblock%}
+

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <title> Update Document</title>
+{% endblock %}
+
+{% block headline %} <h2>Update Document Info</h2> {% endblock %}
+
+{% block content %}
+
+
+<div style="float:left; width:30%;">
+  <form id="frmUpdate" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<div style="float:left; width:70%">
+    <embed src="{{ docloc }}" type="application/pdf" width="90%" height="600px" />
+</div>
+{% endblock %}

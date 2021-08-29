@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+<title>
+    TEST TITLE
+</title>
+{% endblock %}
+
+{% block content %}
+This is a date input: <input type="date" />
+<h2>This is the Test Header</h2>
+<p> This is the body where important things should be put. </p>
+<div style="float:left; width:50%">
+<h1> We'll do the data entry over here</h1>
+    <br><br><br>
+    <p><h2>Now is he time for all good men</h2></p>
+    <br><br><br>
+    <p><h2>The quick brown fox<br></h2></p>
+
+</div>
+<div style="float:right; width:50%; height: 700px;">
+<object data="http://192.168.1.101/documents/test.pdf" type="application/pdf" width="100%" height="100%">
+<p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it:
+<a href="http://192.168.1.101/documents/test.pdf">Download PDF</a>.</p>
+</object>
+</div>
+{% endblock%}
+
